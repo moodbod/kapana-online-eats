@@ -27,17 +27,13 @@ const MenuSection = ({ onAddToCart }: MenuSectionProps) => {
   return (
     <section className="mb-12">
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-2 mb-8">
         {categories.map(category => (
           <Button
             key={category.id}
             variant={selectedCategory === category.id ? "default" : "outline"}
             onClick={() => setSelectedCategory(category.id)}
-            className={`${
-              selectedCategory === category.id 
-                ? "bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 shadow-lg shadow-purple-500/25" 
-                : "border-purple-500/30 text-purple-400 hover:bg-purple-900/20 hover:border-purple-400 bg-slate-800/30 backdrop-blur-sm"
-            } transition-all duration-300 rounded-full px-6 py-2`}
+            className={selectedCategory === category.id ? "bg-gray-900 text-white" : ""}
           >
             {category.name}
           </Button>
@@ -45,7 +41,7 @@ const MenuSection = ({ onAddToCart }: MenuSectionProps) => {
       </div>
 
       {/* Menu Items Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredItems.map(item => (
           <MenuItemCard
             key={item.id}
