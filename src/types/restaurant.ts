@@ -8,6 +8,7 @@ export interface MenuItem {
   category: string;
   isPopular?: boolean;
   isSpicy?: boolean;
+  isAvailable?: boolean;
 }
 
 export interface CartItem extends MenuItem {
@@ -18,4 +19,27 @@ export interface MenuCategory {
   id: string;
   name: string;
   description: string;
+}
+
+export interface Order {
+  id: string;
+  customerName: string;
+  customerEmail?: string;
+  customerPhone?: string;
+  items: CartItem[];
+  total: number;
+  status: 'pending' | 'confirmed' | 'preparing' | 'ready' | 'completed' | 'cancelled';
+  orderTime: string;
+  deliveryAddress?: string;
+  notes?: string;
+}
+
+export interface Customer {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  address?: string;
+  orderHistory: Order[];
+  favorites: MenuItem[];
 }
