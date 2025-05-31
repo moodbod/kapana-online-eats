@@ -27,7 +27,7 @@ const MenuSection = ({ onAddToCart }: MenuSectionProps) => {
   return (
     <section className="mb-12">
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
+      <div className="flex flex-wrap justify-center gap-4 mb-12">
         {categories.map(category => (
           <Button
             key={category.id}
@@ -35,9 +35,9 @@ const MenuSection = ({ onAddToCart }: MenuSectionProps) => {
             onClick={() => setSelectedCategory(category.id)}
             className={`${
               selectedCategory === category.id 
-                ? "bg-orange-600 hover:bg-orange-700" 
-                : "border-orange-200 text-orange-600 hover:bg-orange-50"
-            }`}
+                ? "bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0 shadow-lg shadow-purple-500/25" 
+                : "border-purple-500/30 text-purple-400 hover:bg-purple-900/20 hover:border-purple-400 bg-slate-800/30 backdrop-blur-sm"
+            } transition-all duration-300 rounded-full px-6 py-2`}
           >
             {category.name}
           </Button>
@@ -45,7 +45,7 @@ const MenuSection = ({ onAddToCart }: MenuSectionProps) => {
       </div>
 
       {/* Menu Items Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {filteredItems.map(item => (
           <MenuItemCard
             key={item.id}

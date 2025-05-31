@@ -46,20 +46,23 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
       <Header 
         cartItemCount={getTotalItems()} 
         onCartClick={() => setIsCartOpen(true)}
       />
       
-      <main className="container mx-auto px-4 py-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Welcome to <span className="text-orange-600">Kapana Express</span>
+      <main className="container mx-auto px-4 py-12">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Welcome to <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Kapana Express</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="flex justify-center mb-6">
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"></div>
+          </div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Experience authentic flavors with our fresh, locally-sourced ingredients. 
-            Order online for quick pickup or delivery!
+            <br />Order online for quick pickup or delivery in the digital age.
           </p>
         </div>
 
